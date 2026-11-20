@@ -230,6 +230,33 @@ a {
   color: var(--sage);
 }
 
+/* foto in de afsluitende band */
+.band-grid--photo {
+  align-items: center;
+}
+
+.family-photo {
+  max-width: 200px;
+}
+
+.family-photo img {
+  width: 100%;
+  height: auto;
+  border: 6px solid var(--sand);
+}
+
+.family-photo figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--sage);
+}
+
+.band-copy .eyebrow {
+  margin-bottom: 1.5rem;
+  padding-top: 0;
+}
+
 .band-quote {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 4.6vw, 3.6rem);
@@ -295,6 +322,14 @@ a {
   .band .eyebrow {
     padding-top: 0;
     margin-bottom: 0;
+  }
+
+  .family-photo {
+    max-width: 150px;
+  }
+
+  .band-copy .eyebrow {
+    margin-bottom: 1.25rem;
   }
 
   .footer-note {
