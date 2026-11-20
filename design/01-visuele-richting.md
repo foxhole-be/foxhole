@@ -46,10 +46,11 @@ Geen felle accenten. Contrast komt uit donkergroen op beige, niet uit verzadigin
 
 ## Beeldtaal
 
-Eén isometrische voxel-illustratie als hoofdbeeld: een klein groen eiland met
-een gemeenschapshuis, tuin, bomen en een paar mensen. Opgebouwd uit blokjes,
-maar speels en zacht. Het beeld staat in `assets/images/voxel/`, zodat later
-een galerij met meer scènes naast komt te staan.
+Eén zachte, organische landschapillustratie als hoofdbeeld: lichte en donkere
+groene heuvels, een eenvoudig huis, ronde bomen, een zandpad en twee mensen.
+Geen blokjes of harde randen — vooral curved vormen en veel groen. Het beeld
+staat in `assets/images/`, zodat later een galerij met meer scènes naast komt
+te staan.
 
 ## Uitbreidbaarheid
 
