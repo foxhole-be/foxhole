@@ -51,6 +51,10 @@ een gemeenschapshuis, tuin, bomen en een paar mensen. Opgebouwd uit blokjes,
 maar speels en zacht. Het beeld staat in `assets/images/voxel/`, zodat later
 een galerij met meer scènes naast komt te staan.
 
+De familiefoto staat klein en ingetogen in de afsluitende donkergroene band,
+naast de zin over groeien. Geoptimaliseerd als JPEG in `assets/images/family/`;
+het grote origineel blijft buiten de publicatie.
+
 ## Uitbreidbaarheid
 
 - Kleuren en typografie staan als tokens bovenaan de CSS.
