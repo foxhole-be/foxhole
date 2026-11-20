@@ -28,7 +28,7 @@ Geen felle accenten. Contrast komt uit donkergroen op beige, niet uit verzadigin
 ## Layout
 
 ```
-[ header: foxhole               wie zijn wij? · samen ]
+[ header: foxhole               wie zijn wij? · wat doen wij? · foto's ]
 
 [ hero: korte kop + intro   |   groen landschap ]
 
