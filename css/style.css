@@ -1,0 +1,304 @@
+/* ============================================================
+   Foxhole — basisstijl
+   Tokens bovenaan: kleuren, typografie en ritme.
+   ============================================================ */
+
+:root {
+  /* kleuren */
+  --beige: #f5f0e6;
+  --sand: #e8ddc7;
+  --forest: #20362a;
+  --moss: #3f5b42;
+  --sage: #a8b892;
+  --wood: #b2885e;
+  --clay: #c98e6a;
+  --text: #26352b;
+  --text-soft: #4d5c50;
+
+  /* typografie */
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* ritme */
+  --shell: 1120px;
+  --section-space: clamp(5rem, 11vw, 10rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--beige);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+
+.shell {
+  width: min(100% - 2.5rem, var(--shell));
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 1rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--forest);
+  color: var(--beige);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 1rem;
+}
+
+/* ---------- header ---------- */
+
+.site-header {
+  padding-block: 1.8rem;
+}
+
+.header-inner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.brand {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  letter-spacing: 0.09em;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  font-size: 0.88rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--text-soft);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: var(--forest);
+  border-color: var(--moss);
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  padding-block: clamp(2rem, 6vw, 5rem) var(--section-space);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.eyebrow {
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2.7rem, 6vw, 5rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--moss);
+}
+
+.hero-lead {
+  max-width: 36ch;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: var(--text-soft);
+}
+
+.hero-welcome {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--moss);
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--moss);
+  padding-bottom: 3px;
+}
+
+.text-link span {
+  display: inline-block;
+  margin-left: 0.4rem;
+}
+
+.hero-art img {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- bands ---------- */
+
+.band {
+  padding-block: var(--section-space);
+}
+
+.band-grid {
+  display: grid;
+  grid-template-columns: minmax(140px, 0.35fr) 1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.band .eyebrow {
+  margin-bottom: 0;
+  padding-top: 0.4rem;
+}
+
+.band--sand {
+  background: var(--sand);
+}
+
+.band-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 1.4;
+  max-width: 30ch;
+}
+
+.band--forest {
+  background: var(--forest);
+  color: var(--beige);
+}
+
+.band--forest .eyebrow {
+  color: var(--sage);
+}
+
+.band-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.6vw, 3.6rem);
+  line-height: 1.15;
+  max-width: 20ch;
+}
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  padding-block: 2.5rem;
+  border-top: 1px solid rgba(63, 91, 66, 0.25);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem 2.5rem;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
+.footer-inner .brand {
+  color: var(--text);
+  font-size: 1.15rem;
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+.footer-note {
+  margin-left: auto !important;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-art {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    padding-block: 1.25rem;
+  }
+
+  .header-inner {
+    align-items: center;
+  }
+
+  .band-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .band .eyebrow {
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+
+  .footer-note {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+}
