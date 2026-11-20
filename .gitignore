@@ -1,0 +1,4 @@
+# Originele, grote foto's uit de telefoon niet publiceren
+IMG_*.jpg
+
+# Alleen de geoptimaliseerde versies in assets/images/family/ worden gebruikt
