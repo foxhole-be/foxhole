@@ -11,6 +11,7 @@ Open `index.html` in een browser. Er is geen build-stap of server nodig.
 ```
 index.html                     homepage
 wie-zijn-wij.html              pagina voor Lin en Stef
+aanbod.html                    wat doen wij / aanbod
 css/style.css                  stijl + design tokens
 assets/images/               illustraties (later: galerij)
 design/01-visuele-richting.md ontwerpbeslissingen

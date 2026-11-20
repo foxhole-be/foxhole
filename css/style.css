@@ -262,26 +262,30 @@ a {
   color: var(--text-soft);
 }
 
-.people {
+.people,
+.offers {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(2rem, 6vw, 5rem);
   padding-bottom: var(--section-space);
 }
 
-.person {
+.person,
+.offer {
   border-top: 1px solid rgba(63, 91, 66, 0.25);
   padding-top: 1.5rem;
 }
 
-.person-index {
+.person-index,
+.offer-index {
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   color: var(--moss);
   margin-bottom: 1rem;
 }
 
-.person h2 {
+.person h2,
+.offer h2 {
   font-family: var(--font-serif);
   font-weight: 400;
   font-size: clamp(2rem, 4vw, 3rem);
@@ -293,13 +297,15 @@ a {
   margin-bottom: 1rem;
 }
 
-.person > p:last-child {
+.person > p:last-child,
+.offer > p:last-child {
   max-width: 46ch;
   color: var(--text-soft);
 }
 
 @media (max-width: 700px) {
-  .people {
+  .people,
+  .offers {
     grid-template-columns: 1fr;
   }
 }
