@@ -12,6 +12,7 @@ Open `index.html` in een browser. Er is geen build-stap of server nodig.
 index.html                     homepage
 css/style.css                  stijl + design tokens
 assets/images/voxel/          voxel-illustraties (later: galerij)
+assets/images/family/         geoptimaliseerde familiefoto
 design/01-visuele-richting.md ontwerpbeslissingen
 tools/generate-voxel.ps1       bron voor de hoofdillustratie
 ```
