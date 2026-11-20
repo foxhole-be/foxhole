@@ -39,7 +39,7 @@ Geen felle accenten. Contrast komt uit donkergroen op beige, niet uit verzadigin
 
 [ footer: foxhole · toekomstige pagina's ]
 
-aparte pagina's: wie-zijn-wij.html (Lin en Stef) · aanbod.html (events & co-creatie)
+aparte pagina's: wie-zijn-wij.html (Lin en Stef) · aanbod.html (events & co-creatie) · fotos.html (galerij)
 ```
 
 - Desktop: twee kolommen in de hero, daarna volle breedte met interne maxbreedte.

@@ -310,6 +310,37 @@ a {
   }
 }
 
+/* ---------- foto's ---------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+  padding-bottom: var(--section-space);
+}
+
+.gallery-item {
+  margin: 0;
+}
+
+.gallery-placeholder {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  background: var(--sand);
+  border: 1px dashed rgba(63, 91, 66, 0.3);
+  color: var(--moss);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.gallery-item figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
 /* ---------- footer ---------- */
 
 .site-footer {
