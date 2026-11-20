@@ -28,9 +28,9 @@ Geen felle accenten. Contrast komt uit donkergroen op beige, niet uit verzadigin
 ## Layout
 
 ```
-[ header: foxhole                    over · samen ]
+[ header: foxhole               wie zijn wij? · samen ]
 
-[ hero: korte kop + intro   |   voxel-huis illustratie ]
+[ hero: korte kop + intro   |   groen landschap ]
 
 [ zandvlak: co-creatie in één zin ]
 
@@ -38,6 +38,8 @@ Geen felle accenten. Contrast komt uit donkergroen op beige, niet uit verzadigin
   die er thuiskomen." ]
 
 [ footer: foxhole · toekomstige pagina's ]
+
+aparte pagina: wie-zijn-wij.html met ruimte voor Lin en Stef
 ```
 
 - Desktop: twee kolommen in de hero, daarna volle breedte met interne maxbreedte.
