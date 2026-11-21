@@ -151,6 +151,17 @@ a {
   text-decoration: none;
 }
 
+.site-header .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gutter-sm);
+}
+
+.brand-mark {
+  height: 2.5rem;
+  width: auto;
+}
+
 .site-nav {
   display: flex;
   gap: clamp(1.25rem, 3vw, 2.5rem);
