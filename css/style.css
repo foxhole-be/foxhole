@@ -4,24 +4,55 @@
    ============================================================ */
 
 :root {
-  /* kleuren */
-  --beige: #f5f0e6;
-  --sand: #e8ddc7;
-  --forest: #20362a;
-  --moss: #3f5b42;
-  --sage: #a8b892;
-  --wood: #b2885e;
-  --clay: #c98e6a;
-  --text: #26352b;
-  --text-soft: #4d5c50;
+  /* kleuren — Foxhole Editorial (Stitch design system) */
+  --primary: #27412d;
+  --on-primary: #ffffff;
+  --primary-container: #27412d;
+  --on-primary-container: #f5f2e9;
+  --sage: #3b5b41;
+  --terracotta: #b57c58;
+  --secondary: #566157;
+  --secondary-container: #e2e8df;
+  --on-secondary-container: #27412d;
+  --surface: #f5f2e9;
+  --surface-container-lowest: #faf8f2;
+  --surface-container-low: #efeae0;
+  --surface-container: #e8e0cb;
+  --surface-container-high: #ded5bc;
+  --on-surface: #1f2620;
+  --on-surface-variant: #4c544d;
+  --outline: #7a8077;
+  --outline-variant: #d6cfc0;
+  --error: #ba1a1a;
 
   /* typografie */
-  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-display: "Crimson Pro", "Iowan Old Style", Georgia, serif;
+  --font-body: "Commissioner", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: "Spline Sans Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* spacing */
+  --gutter-xs: 4px;
+  --gutter-sm: 8px;
+  --gutter-md: 16px;
+  --gutter-lg: 24px;
+  --gutter-xl: 32px;
+  --section: 48px;
+  --page-margin: 24px;
+
+  /* radius */
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* motion */
+  --state-change: 150ms ease-out;
 
   /* ritme */
   --shell: 1120px;
-  --section-space: clamp(5rem, 11vw, 10rem);
+  --section-space: clamp(3rem, 6vw, 4rem);
 }
 
 *,
@@ -34,13 +65,26 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
 body {
   margin: 0;
-  background: var(--beige);
-  color: var(--text);
-  font-family: var(--font-sans);
-  font-size: 17px;
-  line-height: 1.7;
+  background: var(--surface);
+  color: var(--on-surface);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -78,8 +122,8 @@ a {
   top: 1rem;
   z-index: 100;
   padding: 0.6rem 1rem;
-  background: var(--forest);
-  color: var(--beige);
+  background: var(--primary);
+  color: var(--on-primary);
   text-decoration: none;
 }
 
@@ -101,30 +145,33 @@ a {
 }
 
 .brand {
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
-  letter-spacing: 0.09em;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
   text-decoration: none;
 }
 
 .site-nav {
   display: flex;
   gap: clamp(1.25rem, 3vw, 2.5rem);
-  font-size: 0.88rem;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
 }
 
 .site-nav a {
   text-decoration: none;
-  color: var(--text-soft);
+  color: var(--on-surface-variant);
   border-bottom: 1px solid transparent;
   padding-bottom: 2px;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition: color var(--state-change), border-color var(--state-change);
 }
 
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
-  color: var(--forest);
-  border-color: var(--moss);
+  color: var(--primary);
+  border-color: var(--sage);
 }
 
 /* ---------- hero ---------- */
@@ -141,51 +188,77 @@ a {
 }
 
 .eyebrow {
-  font-size: 0.76rem;
-  letter-spacing: 0.16em;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
-  color: var(--moss);
+  color: var(--sage);
   margin-bottom: 2rem;
 }
 
 .hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(2.7rem, 6vw, 5rem);
-  line-height: 1.06;
-  letter-spacing: -0.02em;
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: -0.4px;
+}
+
+@media (min-width: 768px) {
+  .hero h1,
+  .page-hero h1 {
+    font-size: 44px;
+    line-height: 48px;
+    letter-spacing: -0.5px;
+  }
 }
 
 .hero h1 em {
   font-style: italic;
-  color: var(--moss);
+  color: var(--sage);
 }
 
 .hero-lead {
   max-width: 36ch;
   margin-top: 2rem;
-  font-size: 1.1rem;
-  color: var(--text-soft);
+  font-size: 16px;
+  color: var(--on-surface-variant);
 }
 
 .hero-welcome {
   margin-top: 0.5rem;
-  font-size: 1.1rem;
-  color: var(--moss);
+  font-size: 16px;
+  color: var(--sage);
 }
 
 .text-link {
   display: inline-block;
   margin-top: 2.5rem;
-  font-size: 0.9rem;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
   text-decoration: none;
-  border-bottom: 1px solid var(--moss);
-  padding-bottom: 3px;
+  border-bottom: 1px solid var(--on-surface);
+  padding-bottom: var(--gutter-sm);
+  border-radius: var(--radius-sm);
+  transition: color var(--state-change), border-color var(--state-change);
+}
+
+.text-link:hover {
+  color: var(--sage);
+  border-color: var(--sage);
 }
 
 .text-link span {
   display: inline-block;
-  margin-left: 0.4rem;
+  margin-left: var(--gutter-sm);
+  transition: transform var(--state-change);
+}
+
+.text-link:hover span {
+  transform: translateX(var(--gutter-xs));
 }
 
 .hero-art img {
@@ -212,30 +285,40 @@ a {
 }
 
 .band--sand {
-  background: var(--sand);
+  background: var(--surface-container);
 }
 
 .band-text {
-  font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  line-height: 1.4;
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.15px;
   max-width: 30ch;
 }
 
 .band--forest {
-  background: var(--forest);
-  color: var(--beige);
+  background: var(--primary-container);
+  color: var(--on-primary-container);
 }
 
 .band--forest .eyebrow {
-  color: var(--sage);
+  color: var(--secondary-container);
 }
 
 .band-quote {
-  font-family: var(--font-serif);
-  font-size: clamp(2rem, 4.6vw, 3.6rem);
-  line-height: 1.15;
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: -0.25px;
   max-width: 20ch;
+}
+
+@media (min-width: 768px) {
+  .band-quote {
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: -0.3px;
+  }
 }
 
 /* ---------- wie zijn wij ---------- */
@@ -249,17 +332,18 @@ a {
 }
 
 .page-hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  line-height: 1.06;
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: -0.4px;
 }
 
 .page-intro {
   max-width: 46ch;
   margin-top: 1.75rem;
-  font-size: 1.1rem;
-  color: var(--text-soft);
+  font-size: 16px;
+  color: var(--on-surface-variant);
 }
 
 .people,
@@ -272,35 +356,48 @@ a {
 
 .person,
 .offer {
-  border-top: 1px solid rgba(63, 91, 66, 0.25);
+  border-top: 1px solid var(--outline-variant);
   padding-top: 1.5rem;
 }
 
 .person-index,
 .offer-index {
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  color: var(--moss);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.8px;
+  color: var(--sage);
   margin-bottom: 1rem;
 }
 
 .person h2,
 .offer h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: -0.25px;
   margin-bottom: 1rem;
 }
 
 .person-role {
-  color: var(--moss);
+  color: var(--sage);
   margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .person h2,
+  .offer h2 {
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: -0.3px;
+  }
 }
 
 .person > p:last-child,
 .offer > p:last-child {
   max-width: 46ch;
-  color: var(--text-soft);
+  color: var(--on-surface-variant);
 }
 
 @media (max-width: 700px) {
@@ -327,25 +424,30 @@ a {
   aspect-ratio: 4 / 3;
   display: grid;
   place-items: center;
-  background: var(--sand);
-  border: 1px dashed rgba(63, 91, 66, 0.3);
-  color: var(--moss);
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  background: var(--surface-container);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-md);
+  color: var(--sage);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
 }
 
 .gallery-item figcaption {
   margin-top: 0.75rem;
-  font-size: 0.82rem;
-  color: var(--text-soft);
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.1px;
+  color: var(--on-surface-variant);
 }
 
 /* ---------- footer ---------- */
 
 .site-footer {
   padding-block: 2.5rem;
-  border-top: 1px solid rgba(63, 91, 66, 0.25);
+  border-top: 1px solid var(--outline-variant);
 }
 
 .footer-inner {
@@ -353,12 +455,14 @@ a {
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.75rem 2.5rem;
-  font-size: 0.82rem;
-  color: var(--text-soft);
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.1px;
+  color: var(--on-surface-variant);
 }
 
 .footer-inner .brand {
-  color: var(--text);
+  color: var(--on-surface);
   font-size: 1.15rem;
 }
 
@@ -371,7 +475,7 @@ a {
 }
 
 .footer-pages a {
-  color: var(--moss);
+  color: var(--sage);
   text-underline-offset: 3px;
 }
 
